@@ -23,6 +23,7 @@ In the case above you have the following folder structure
    |
    +- more_code.js
 ```
+Every line of `//@ some_name` is interpreted as a single JavaScript file you want to import.
 ### Build the Code
 To run the build once and merge the main and import files, just do
 ```
