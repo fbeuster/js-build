@@ -1,4 +1,6 @@
 # JS Build
+[![BSD-2-Clause License](https://img.shields.io/badge/License-BSD--2-blue.svg)](https://github.com/fbeuster/js-build/blob/master/LICENSE.md)
+
 This is a small shell script, that allows you to import JavaScript files into other ones.
 I made it during an IBM 10% Hackday at work and it's probably very limited but works for
 my use.
