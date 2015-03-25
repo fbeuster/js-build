@@ -4,10 +4,13 @@
 
 #!/bin/bash
 
+# color shortcuts
+red='\x1b[1;31m'
+white='\x1b[1;37m'
+
 # check if file is given
 if [ $# -lt 1 ]; then
-  echo "Missing arguments, exiting."
-  echo "Use: ./js-build-watch FILE"
+  printf "${red}Error:${white} Missing input file.\n"
   exit
 fi
 
