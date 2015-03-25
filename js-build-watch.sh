@@ -1,3 +1,7 @@
+# JS Build (https://github.com/fbeuster/js-build)
+# Copyright (c) 2015 | Felix Beuster | BSD-2-Clause License
+# All rights reserved.
+
 #!/bin/bash
 
 # check if file is given
