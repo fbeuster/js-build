@@ -40,7 +40,8 @@ $ ./js-build-watch.sh my_source.js
 ```
 This listens to any file changes in all subdirectories of your main javaScript file.
 
-## Possible Features
+## Possible Features/Improvements
 - [ ] include complete sub directories
 - [ ] clean up the include keyword in `js-build.sh`
 - [ ] allow users to set output file
+- [x] clear error messages

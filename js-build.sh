@@ -4,9 +4,13 @@
 
 #!/bin/bash
 
+# color shortcuts
+red='\x1b[1;31m'
+white='\x1b[1;37m'
+
 # file name is given?
 if [ $# -eq 0 ]; then
-  echo "Missing input file."
+  printf "${red}Error:${white} Missing input file.\n"
   exit
 fi
 
@@ -17,7 +21,7 @@ MAIN_FILE="$1"
 
 # file exists
 if [ ! -e $MAIN_FILE ]; then
-  echo "Main file not found."
+  printf "${red}Error:${white} $MAIN_NAME.js not found.\n"
   exit
 fi
 
@@ -40,7 +44,7 @@ do
 
     # inckude file exists
     if [ ! -e $INCLUDE_FILE ]; then
-      echo "Include file not found."
+      printf "${red}Error:${white} $INCLUDE_NAME.js not found.\n"
       exit
     fi
 
