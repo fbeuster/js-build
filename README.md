@@ -46,4 +46,4 @@ This listens to any file changes in all subdirectories of your main javaScript f
 - [ ] allow users to set output file
 - [x] clear error messages
 - [ ] run build after watcher started
-- [ ] get rid of .sh
+- [x] get rid of .sh
