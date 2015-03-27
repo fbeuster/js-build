@@ -45,5 +45,5 @@ This listens to any file changes in all subdirectories of your main javaScript f
 - [ ] clean up the include keyword in `js-build.sh`
 - [ ] allow users to set output file
 - [x] clear error messages
-- [ ] run build after watcher started
+- [x] run build after watcher started
 - [x] get rid of .sh

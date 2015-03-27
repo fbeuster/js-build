@@ -18,6 +18,7 @@ fi
 DIR=`dirname $1`
 
 # do the tracking
+./js-build $1
 while true; do
-  inotifywait -re close_write $DIR && ./js-build.sh $1
+  inotifywait -re close_write $DIR && ./js-build $1
 done
