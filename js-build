@@ -25,10 +25,27 @@ if [ ! -e $MAIN_FILE ]; then
   exit
 fi
 
-# make a clean compile file
-COMP_FILE="$CUR_PATH/${MAIN_NAME}_compiled.js"
+# choose the compile file
+COMP_NAME="${MAIN_NAME}_compiled.js"
 
+if [[ $2 != "" ]]; then
+  COMP_NAME=$2
+
+  if [[ ${COMP_NAME: -3} != ".js" ]]; then
+    COMP_NAME="$COMP_NAME.js"
+  fi
+fi
+
+COMP_FILE="$CUR_PATH/$COMP_NAME"
+
+# make a clean compile file
 touch $COMP_FILE
+
+if [ $? -ne 0 ]; then
+  printf "${red}Error:${white} $MAIN_NAME.js not found.\n"
+  exit
+fi
+
 > $COMP_FILE
 
 # iterating MAIN_FILE line-wise

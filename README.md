@@ -29,21 +29,35 @@ Every line of `//@ some_name` is interpreted as a single JavaScript file you wan
 ### Build the Code
 To run the build once and merge the main and import files, just do
 ```
-$ ./js-build.sh my_source.js
+$ ./js-build my_source.js
 ```
-The file is written in the same directory the original main file is placed and will have an `_compiled` in its file name.
+The file is written in the same directory the original main file is placed and will
+have an `_compiled` in its file name.
+
+**Note:** You can also set your own output file. Read more in a later section.
 
 ### Using the file system listener
 If you want to start the change listener (requires **inotify-tools** to work):
 ```
-$ ./js-build-watch.sh my_source.js
+$ ./js-build-watch my_source.js
 ```
 This listens to any file changes in all subdirectories of your main javaScript file.
+
+###Setting a custom output file###
+If you don't want a pre-set output file with `_compiled` and need a custom one, you can define
+it like one of the following options:
+```
+$ ./js-build source.js output.js
+$ ./js-build-watcher source.js output.js
+```
+
+That creates (or overrides) the `output.js` file, which is stored in the same directory
+as the defined `source.js`.
 
 ## Possible Features/Improvements
 - [ ] include complete sub directories
 - [ ] clean up the include keyword in `js-build.sh`
-- [ ] allow users to set output file
+- [x] allow users to set output file
 - [x] clear error messages
 - [x] run build after watcher started
 - [x] get rid of .sh
