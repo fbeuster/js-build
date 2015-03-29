@@ -51,12 +51,16 @@ fi
 # iterating MAIN_FILE line-wise
 while read -r line || [[ -n "$line" ]]
 do
+  # set the include keyword
+  KEY="//@"
+  E_KEY=$(echo $KEY | sed -e 's/[]\/$*.^|[]/\\&/g')
+
   # do we need to include a file?
-  if [[ $line != "//@ "* ]]; then
+  if [[ $line != "$KEY "* ]]; then
     echo $line >> $COMP_FILE
   else
     # strip the line to file name
-    INCLUDE_NAME=`sed "s/\/\/@ //g" <<< $line`
+    INCLUDE_NAME=`sed "s/$E_KEY //g" <<< $line`
     INCLUDE_FILE="$CUR_PATH/$INCLUDE_NAME.js"
 
     # inckude file exists

@@ -56,7 +56,7 @@ as the defined `source.js`.
 
 ## Possible Features/Improvements
 - [ ] include complete sub directories
-- [ ] clean up the include keyword in `js-build.sh`
+- [x] clean up the include keyword in `js-build.sh`
 - [x] allow users to set output file
 - [x] clear error messages
 - [x] run build after watcher started
