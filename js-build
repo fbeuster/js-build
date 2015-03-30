@@ -57,7 +57,7 @@ do
 
   # do we need to include a file?
   if [[ $line != "$KEY "* ]]; then
-    echo $line >> $COMP_FILE
+    echo "$line" >> $COMP_FILE
   else
     # strip the line to file name
     INCLUDE_NAME=`sed "s/$E_KEY //g" <<< $line`
