@@ -17,8 +17,11 @@ fi
 # get the directory we want to track
 DIR=`dirname $1`
 
+# get script directory
+S_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 # do the tracking
-./js-build $1 $2
+$S_DIR/js-build $1 $2
 while true; do
-  inotifywait -re close_write $DIR && ./js-build $1 $2
+  inotifywait -re close_write $DIR && $S_DIR/js-build $1 $2
 done
