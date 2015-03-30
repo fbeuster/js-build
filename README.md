@@ -61,3 +61,5 @@ as the defined `source.js`.
 - [x] clear error messages
 - [x] run build after watcher started
 - [x] get rid of .sh
+- [ ] ignore common file headers
+- [ ] more/easier configuration
