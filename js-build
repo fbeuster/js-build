@@ -5,6 +5,7 @@
 #!/bin/bash
 
 # color shortcuts
+green='\x1b[1;32m'
 red='\x1b[1;31m'
 white='\x1b[1;37m'
 
@@ -16,8 +17,8 @@ fi
 
 # saving current path and main file
 MAIN_NAME=`basename $1 .js`
-CUR_PATH=`sed "s/$MAIN_NAME.js//g" <<< $1`
-MAIN_FILE="$1"
+CUR_PATH=`dirname $1`
+MAIN_FILE="$CUR_PATH/$MAIN_NAME.js"
 
 # file exists
 if [ ! -e $MAIN_FILE ]; then
@@ -42,7 +43,7 @@ COMP_FILE="$CUR_PATH/$COMP_NAME"
 touch $COMP_FILE
 
 if [ $? -ne 0 ]; then
-  printf "${red}Error:${white} $MAIN_NAME.js not found.\n"
+  printf "${red}Error:${white} $COMP_NAME.js not found.\n"
   exit
 fi
 
@@ -75,3 +76,5 @@ do
     printf "\n\n" >> $COMP_FILE
   fi
 done < $MAIN_FILE
+
+printf "${green}Success:${white} JavaScript build completed.\n"
