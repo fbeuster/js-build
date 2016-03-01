@@ -52,6 +52,10 @@ fi
 # iterating MAIN_FILE line-wise
 while IFS= read -r line || [[ -n "$line" ]]
 do
+
+  # removing DOS carriage returns
+  line=`sed 's/\r$/\n/' <<< $line`
+
   # set the include keyword
   KEY="//@"
   E_KEY=$(echo $KEY | sed -e 's/[]\/$*.^|[]/\\&/g')
@@ -64,7 +68,7 @@ do
     INCLUDE_NAME=`sed "s/$E_KEY //g" <<< $line`
     INCLUDE_FILE="$CUR_PATH/$INCLUDE_NAME.js"
 
-    # inckude file exists
+    # include file exists
     if [ ! -e $INCLUDE_FILE ]; then
       printf "${red}Error:${white} $INCLUDE_NAME.js not found.\n"
       exit
