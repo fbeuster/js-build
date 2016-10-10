@@ -1,6 +1,6 @@
 JS Build (https://github.com/fbeuster/js-build)
 
-Copyright &copy; 2015 | Felix Beuster | BSD-2-Clause License
+Copyright &copy; 2015 - 2016 | Felix Beuster | BSD-2-Clause License
 
 All rights reserved.
 
