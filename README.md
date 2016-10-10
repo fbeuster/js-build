@@ -7,6 +7,19 @@ my use.
 
 Any suggestions for improvements are appreciated.
 
+## Installation
+To install JS Build, simply clone the repository and run the following command the ´install´
+script in the Git directory.
+```
+git clone https://github.com/fbeuster/js-build.git
+./install
+```
+The script will ask you for root access to install dependencies and copy the program files
+into the ´/usr/local/bin´ directory.
+
+### Dependencies
+- [inotify-tools](https://github.com/rvoicilas/inotify-tools)
+
 ## Usage
 ### Import in JavaScript
 Right now you can only import JavaScript files into a main file. The way you do this in
@@ -43,7 +56,7 @@ $ ./js-build-watch my_source.js
 ```
 This listens to any file changes in all subdirectories of your main javaScript file.
 
-###Setting a custom output file###
+### Setting a custom output file
 If you don't want a pre-set output file with `_compiled` and need a custom one, you can define
 it like one of the following options:
 ```

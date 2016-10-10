@@ -1,0 +1,16 @@
+# JS Build (https://github.com/fbeuster/js-build)
+# Copyright (c) 2015 | Felix Beuster | BSD-2-Clause License
+# All rights reserved.
+
+#!/bin/bash
+
+# install inotify-tools
+sudo apt-get install inotify-tools
+
+# copy files
+sudo cp js-build /usr/local/bin/js-build
+sudo cp js-build-watcher /usr/local/bin/js-build-watcher
+
+# make root owner
+sudo chown root:root /usr/local/bin/js-build
+sudo chown root:root /usr/local/bin/js-build-watcher
